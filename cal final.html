@@ -1,0 +1,180 @@
+<style>
+    *{
+        margin:0;
+        padding:0;
+        background: #000;
+
+    }
+    .Calculator{
+        width:100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .head{
+        background-color: rgb(245, 245, 245);
+        border-radius: 20px;
+    }
+    .first-row{
+        
+        display:flex;
+        flex-direction: row;
+    }
+    input[type="text"]{
+        font-size: 30px;
+        padding: 40px 0px;
+        border-radius: 20px;
+        text-align: right ;
+        color:white;
+      }
+      .text input{
+        border: none;
+        border:3px solid gainsboro;
+      }
+      .box{
+        width:25%;
+        height:25%;
+        border-radius: 5px;
+      }
+      .second-line{
+        display: flex;
+        text-align: center;
+    
+
+
+      }
+      .third-line{
+        display: flex;
+        text-align: center;
+    
+      }
+      .fourth-line{
+        display: flex;
+        text-align: center;
+    
+      }
+      .fifth-line{
+        display: flex;
+        text-align: center;
+    
+      }
+      .sixth-line{
+        display: flex;
+        text-align: center;
+    
+      }
+      .box{
+        padding:20px;
+        font-size: 35px;
+        
+      }
+      .box button{
+        font-size: 24px;
+        padding:10px;
+        border-radius: 20px;
+        background-color: gray;
+        color: white;
+        border: none;
+      }
+      .dot{
+        text-align: center;
+      }
+      .del button{
+        color:white;
+        background-color: red;
+      }
+      .ac button{
+        color: white;
+        background-color: yellow;
+      }
+      .equal button{
+        color: white;
+        background-color: green;
+      }
+      .dive button{
+        color: white;
+        background-color: orangered;
+      }
+</style>
+<html>
+    <body>
+        <div class="Calculator">
+            <div class="head">
+                <div clas="first-row">
+                    <div class="text"><input type="text" placeholder="0" id="myapp"></div>
+                </div>
+                <div class="second-line">
+                    <div class="box ac"><button onclick="Clear()">AC</button></div>
+                    <div class="box del"><button onclick="del()">DEL</button></div>
+                    <div class="box dive"><button onclick="display('/')">/</button></div>
+
+                    <div class="box dive"><button onclick="display(')')">)</button></div>
+
+                </div>
+                <div class="third-line">
+                    <div class="box"><button onclick="display('7')">7</button></div>
+                    <div class="box"><button onclick="display('8')">8 </button></div>
+                    <div class="box"><button onclick="display('9')">9</button></div>
+
+                    <div class="box dive"><button onclick="display('*')">*</button></div>
+
+                </div>
+                <div class="fourth-line">
+                    <div class="box"><button onclick="display('4')">4</button></div>
+                    <div class="box"><button onclick="display('5')">5</button></div>
+                    <div class="box"><button onclick="display('6')">6</button></div>
+
+                    <div class="box dive"><button onclick="display('-')">-</button></div>
+
+                </div>
+                <div class="fifth-line">
+                    <div class="box"><button onclick="display('1')">1</button></div>
+                    <div class="box"><button onclick="display('2')">2</button></div>
+                    <div class="box"><button onclick="display('3')">3</button></div>
+
+                    <div class="box dive"><button onclick="display('+')">+</button></div>
+
+                </div>
+                <div class="sixth-line">
+                    <div class="box dive"><button onclick="display('(')">(</button></div>
+                    <div class="box"><button onclick="display('0')">0</button></div>
+                    <div class="box dot dive"><button onclick="display('.')" >.</button></div>
+
+                    <div class="box equal"><button onclick="Calculate()">=</button></div>
+
+                </div>
+
+            </div>
+
+        </div>
+    <script>
+        
+        let outs=document.getElementById('myapp');
+        function display(num){
+            outs.value+=num;
+        }
+        function Calculate(){
+            try{
+                outs.value=eval(outs.value);
+            }
+            catch(err)
+            {
+                alert("invalid")
+            }
+        }
+        function Clear(){
+            outs.value="";
+        }
+        function del(){
+            outs.value=outs.value.slice(0,-1);
+
+        }
+        
+       
+
+        
+
+    </script>
+    </body>
+</html>
